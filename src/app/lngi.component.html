@@ -13,7 +13,7 @@
     <div class="control-group">
       <label for="customPace">Custom Speed (ms):</label>
       <div class="speed-controls">
-        <button class="speed-btn" (click)="adjustSpeed('up')" title="Faster">+</button>
+        <button class="speed-btn" (click)="adjustSpeed('down')" title="Faster">-</button>
         <input
           type="number"
           id="customPace"
@@ -22,7 +22,7 @@
           min="1"
           step="1"
           placeholder="Enter milliseconds">
-        <button class="speed-btn" (click)="adjustSpeed('down')" title="Slower">-</button>
+        <button class="speed-btn" (click)="adjustSpeed('up')" title="Slower">+</button>
       </div>
       <small class="help-text">Lower = faster, Higher = slower</small>
     </div>

@@ -97,10 +97,10 @@ export class LngiComponent implements OnDestroy {
     if (this.customPace > 1000) adjustment = 200;
     if (this.customPace > 5000) adjustment = 500;
 
-    if (direction === 'up') {
-      this.customPace = Math.max(1, this.customPace - adjustment); // faster (lower number)
-    } else {
-      this.customPace = this.customPace + adjustment; // slower (higher number)
+    if (direction === 'up') { // '+' button
+      this.customPace = this.customPace + adjustment; // Slower (higher number)
+    } else { // '-' button
+      this.customPace = Math.max(1, this.customPace - adjustment); // Faster (lower number)
     }
 
     this.pace = this.customPace;
