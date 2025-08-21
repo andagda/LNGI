@@ -224,3 +224,28 @@ button:disabled {
   font-style: italic;
   margin-top: 4px;
 }
+
+/* Custom Input Field */
+.custom-input {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  width: 150px;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .custom-input {
+    font-size: 1rem;
+    padding: 10px 14px;
+    width: 180px;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-input {
+    width: 200px;
+  }
+}

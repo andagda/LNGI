@@ -22,6 +22,7 @@ export class LngiComponent implements OnDestroy {
   pace = 1000; // milliseconds
   customPace = 1000; // for freeform input
   multiplier = 1; // increment multiplier
+  customMultiplier = 1; // for custom multiplier input
   subscription: Subscription | null = null;
   isRunning = false;
 
@@ -112,8 +113,18 @@ export class LngiComponent implements OnDestroy {
 
   changeMultiplier(newMultiplier: number) {
     this.multiplier = newMultiplier;
+    this.customMultiplier = newMultiplier; // sync custom input with preset
     // No need to restart the interval for multiplier changes
     // It will take effect on the next increment
+  }
+
+  changeCustomMultiplier(newMultiplier: string) {
+    const multiplierValue = +newMultiplier;
+    if (multiplierValue > 0) {
+      this.multiplier = multiplierValue;
+      this.customMultiplier = multiplierValue;
+      // No need to restart the interval for multiplier changes
+    }
   }
 
   formatNumber(num: number): string {

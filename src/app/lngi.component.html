@@ -28,11 +28,26 @@
     </div>
 
     <div class="control-group">
-      <label for="multiplier">Increment:</label>
+      <label for="multiplier">Increment Presets:</label>
       <select id="multiplier" [(ngModel)]="multiplier" (change)="changeMultiplier(+multiplier)">
         <option *ngFor="let option of multiplierOptions" [value]="option.value">{{ option.label }}</option>
       </select>
     </div>
+
+    <div class="control-group">
+      <label for="customMultiplier">Custom Increment:</label>
+      <input
+        type="number"
+        id="customMultiplier"
+        [(ngModel)]="customMultiplier"
+        (change)="changeCustomMultiplier(customMultiplier.toString())"
+        min="1"
+        step="1"
+        placeholder="Enter custom increment value"
+        class="custom-input">
+      <small class="help-text">Enter any number to add per increment</small>
+    </div>
+
     <div class="button-group">
       <button (click)="start()" [disabled]="isRunning">Start</button>
       <button (click)="pause()" [disabled]="!isRunning">Pause</button>
